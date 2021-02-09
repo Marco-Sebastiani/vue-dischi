@@ -29,7 +29,7 @@
             <div class="cds-container container">
 
                 <!-- Disco ad esempio -->
-                <div v-for="musica in copertine" class="cd" v-if="musica.genre.includes(selezionato)">
+                <div v-for="musica in copertine" class="cd" v-if="selezionato == 'All'|| musica.genre == selezionato">
                     <img :src="musica.poster" alt="">
                     <h3>{{ musica.title}}</h3>
                     <span class="author">{{ musica.author}}</span>

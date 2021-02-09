@@ -3,7 +3,7 @@ var app = new Vue({
     data:{
         copertine:[],
         genere: ['All'],
-        selezionato:''
+        selezionato:'All'
     },
     mounted(){
         axios
