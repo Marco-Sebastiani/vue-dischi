@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Copertine dischi musicali</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="box-all" id="app">
+
+            <header>
+                <div class="container mio-prova">
+                    <div class="box-img">
+                        <img src="logo.png" alt="logo" />
+                    </div>
+                    <div class="box-select">
+                        <h3>Seleziona il tuo genere</h3>
+                        <select v-model="selezionato">
+                            <option v-for="tipo in genere" :value="tipo">{{ tipo }}</option>
+                        </select>
+                    </div>
+                </div>
+
+            </header>
+    
+            <div class="cds-container container">
+
+                <!-- Disco ad esempio -->
+                <div v-for="musica in copertine" class="cd" v-if="musica.genre.includes(selezionato)">
+                    <img :src="musica.poster" alt="">
+                    <h3>{{ musica.title}}</h3>
+                    <span class="author">{{ musica.author}}</span>
+                    <span class="year">{{ musica.year}}</span>
+                </div>
+            </div>
+        </div>
+        
+
+        <script src="js/script.js" charset="utf-8"></script>
+    </body>
+</html>
