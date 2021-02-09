@@ -67,7 +67,9 @@ header img {
     color: grey;
 }
 
-.mio-prova{
+/*******CLASSI AGGIUNTE DA ME***********/
+
+.box-header{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -80,4 +82,24 @@ header img {
 .box-select h3{
     color: greenyellow;
     margin-right: 10px;
+}
+
+body::-webkit-scrollbar-track{
+    background: rgb(185, 181, 181);
+    border:1px solid rgba(255, 255, 255, 0.1);
+    border-radius:10px;
+}
+body::-webkit-scrollbar-thumb{
+    background:#1ed760 ;
+    height:70px;
+    border-radius:10px;
+}
+body::-webkit-scrollbar-thumb:hover{
+    background: #3D3D3D;
+}
+
+body::-webkit-scrollbar{
+    width: 5px;
+    height: 4px;
+
 }
