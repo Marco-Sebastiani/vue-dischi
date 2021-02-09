@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>Copertine dischi musicali</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
     </head>
@@ -17,11 +17,11 @@
 
         <div class="cds-container container" id="app">
             <!-- Disco ad esempio -->
-            <div class="cd">
-                <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Ten_Summoner%27s_Tales.jpg" alt="">
-                <h3>Ten's Summoners Tales</h3>
-                <span class="author">Sting</span>
-                <span class="year">1993</span>
+            <div v-for="musica in copertine" class="cd">
+                <img :src="musica.poster" alt="">
+                <h3>{{ musica.title}}</h3>
+                <span class="author">{{ musica.author}}</span>
+                <span class="year">{{ musica.year}}</span>
             </div>
         </div>
         
